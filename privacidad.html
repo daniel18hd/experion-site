@@ -2,6 +2,12 @@
 <html lang="es-MX">
 <head>
   <meta charset="utf-8" />
+  <!-- CSP (endurecimiento de seguridad). Nota: servido vía <meta> porque GitHub
+       Pages no permite headers HTTP. Limitación conocida: frame-ancestors es
+       IGNORADO por el browser cuando la CSP viene en <meta> (solo aplica como
+       header HTTP). Se incluye para documentar intención; el anti-clickjacking
+       real requiere servir el sitio detrás de un proxy/CDN (Cloudflare/Netlify). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#070A18" />
   <title>aviso de privacidad — experion</title>
