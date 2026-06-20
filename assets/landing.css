@@ -1,0 +1,257 @@
+/* experion — landing. DS Electric. Solo para index.html (las legales usan site.css). */
+
+:root {
+  --ink-800: #070A18;
+  --ink-900: #04060F;
+  --ink-700: #0A0E26;
+  --ink-border: #2A355F;
+  --electric: #2348FF;
+  --violet: #7C4DFF;
+  --violet-deep: #5A39E6;
+  --cyan: #5FD0FF;
+  --fog: #A9B2C8;
+  --white: #ffffff;
+  --grad-signature:
+    radial-gradient(120% 90% at 78% 8%, rgba(95,208,255,0.45) 0%, rgba(95,208,255,0) 42%),
+    radial-gradient(130% 120% at 12% 0%, rgba(124,77,255,0.55) 0%, rgba(124,77,255,0) 55%),
+    linear-gradient(168deg, #2348FF 0%, #4733D6 46%, #16133A 82%, #070A18 100%);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--ink-800);
+  color: var(--white);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+
+/* ---- grano sutil (overlay turbulence) ---- */
+.grain {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  opacity: 0.06; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- tipografía base ---- */
+.eyebrow {
+  display: inline-block;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--cyan);
+}
+.eyebrow--violet { color: #b8a3ff; }
+.eyebrow--cyan { color: var(--cyan); }
+
+.wordmark {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600; letter-spacing: -0.02em; font-size: 22px;
+  color: var(--white);
+}
+.wordmark--lg { font-size: clamp(28px, 6vw, 44px); display: block; opacity: 0.92; }
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex; flex-direction: column;
+  background: var(--grad-signature);
+  padding: 0 24px;
+  overflow: hidden;
+}
+.hero::after { /* viñeta inferior para fundir con el ink */
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 38%;
+  background: linear-gradient(180deg, rgba(7,10,24,0) 0%, var(--ink-800) 100%);
+  z-index: 1; pointer-events: none;
+}
+
+.nav {
+  position: relative; z-index: 2;
+  display: flex; align-items: center;
+  padding: 24px 4px; max-width: 1100px; width: 100%; margin: 0 auto;
+}
+
+.hero__inner {
+  position: relative; z-index: 2;
+  margin: auto 0; max-width: 1100px; width: 100%;
+  padding: 0 4px 12vh;
+  margin-left: auto; margin-right: auto;
+  animation: rise 0.9s cubic-bezier(.2,.7,.2,1) both;
+}
+.hero__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600; letter-spacing: -0.03em; line-height: 1.02;
+  font-size: clamp(48px, 12vw, 104px);
+  margin: 18px 0 0; text-transform: lowercase;
+}
+.hero__sub {
+  margin-top: 22px; max-width: 30ch;
+  font-size: clamp(17px, 2.4vw, 21px); line-height: 1.45;
+  color: rgba(255,255,255,0.92);
+}
+.hero__cta { margin-top: 34px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.hero__hint { font-size: 12px; letter-spacing: 0.04em; color: rgba(255,255,255,0.62); }
+
+.hero__scroll {
+  position: absolute; z-index: 2; bottom: 26px; left: 50%; transform: translateX(-50%);
+}
+.hero__scroll span {
+  display: block; width: 22px; height: 36px; border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: 999px; position: relative;
+}
+.hero__scroll span::after {
+  content: ""; position: absolute; top: 7px; left: 50%; transform: translateX(-50%);
+  width: 3px; height: 7px; border-radius: 2px; background: var(--cyan);
+  animation: scrolldot 1.6s ease-in-out infinite;
+}
+
+/* ============ BOTÓN APP STORE ============ */
+.btn-appstore {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 13px 24px; border-radius: 999px;
+  background: linear-gradient(135deg, var(--violet-deep), var(--violet));
+  color: var(--white); text-decoration: none;
+  box-shadow: 0 8px 28px -8px rgba(124,77,255,0.55);
+  transition: transform 140ms ease, box-shadow 140ms ease;
+  cursor: not-allowed; /* placeholder hasta link real */
+  user-select: none;
+}
+.btn-appstore:hover { transform: translateY(-1px); box-shadow: 0 14px 38px -10px rgba(124,77,255,0.72); }
+.btn-appstore__logo { width: 26px; height: 26px; fill: var(--white); flex: none; }
+.btn-appstore__txt { display: flex; flex-direction: column; line-height: 1.05; text-align: left; }
+.btn-appstore__txt small { font-size: 10px; letter-spacing: 0.04em; opacity: 0.85; text-transform: lowercase; }
+.btn-appstore__txt strong { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: -0.01em; }
+
+/* ============ SECCIONES ============ */
+.section {
+  max-width: 1100px; margin: 0 auto;
+  padding: clamp(72px, 12vw, 132px) 24px;
+}
+.section__title {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+  font-size: clamp(30px, 5.5vw, 52px); letter-spacing: -0.02em; line-height: 1.05;
+  text-transform: lowercase; margin: 14px 0 0;
+}
+.section__lead { margin-top: 16px; max-width: 46ch; color: var(--fog); font-size: 16px; }
+
+/* ---- cards ---- */
+.cards {
+  margin-top: 48px;
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 24px; overflow: hidden;
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+.card:hover { transform: translateY(-4px); border-color: rgba(124,77,255,0.45); }
+.card__media { position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
+.card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms ease; }
+.card:hover .card__media img { transform: scale(1.05); }
+.card__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(7,10,24,0) 35%, rgba(7,10,24,0.55) 100%);
+}
+.card__credit {
+  position: absolute; bottom: 8px; right: 10px; z-index: 2;
+  font-size: 9px; letter-spacing: 0.02em; color: rgba(255,255,255,0.6);
+}
+.card__body { padding: 18px 18px 22px; }
+.card__title {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.02em;
+  font-size: 19px; line-height: 1.12; text-transform: lowercase; margin: 10px 0 8px;
+}
+.card__desc { font-size: 14px; color: var(--fog); line-height: 1.5; }
+
+/* ---- cómo funciona ---- */
+.how { border-top: 1px solid rgba(255,255,255,0.06); }
+.steps {
+  list-style: none; margin-top: 48px;
+  display: grid; gap: 28px; grid-template-columns: repeat(3, 1fr);
+}
+.step {
+  padding: 28px; border-radius: 24px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.step__num {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+  font-size: 44px; letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.step__title {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.02em;
+  font-size: 21px; text-transform: lowercase; margin: 14px 0 8px;
+}
+.step__desc { color: var(--fog); font-size: 15px; }
+
+/* ============ CTA FINAL ============ */
+.cta {
+  position: relative; overflow: hidden;
+  background: var(--grad-signature);
+  text-align: center;
+  padding: clamp(80px, 14vw, 150px) 24px;
+}
+.cta::before { /* fundido superior desde el ink */
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 30%;
+  background: linear-gradient(180deg, var(--ink-800) 0%, rgba(7,10,24,0) 100%);
+  z-index: 1; pointer-events: none;
+}
+.cta__inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.cta__title {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+  font-size: clamp(34px, 7vw, 68px); letter-spacing: -0.03em; text-transform: lowercase;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--ink-900);
+  padding: 48px 24px 56px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+}
+.footer__links { display: flex; gap: 26px; flex-wrap: wrap; justify-content: center; }
+.footer__links a {
+  color: var(--fog); text-decoration: none; font-size: 14px;
+  transition: color 140ms ease;
+}
+.footer__links a:hover { color: var(--cyan); }
+.footer__meta { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+.footer__brand { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.02em; color: rgba(255,255,255,0.85); }
+.footer__legal, .footer__credit { font-size: 12px; color: rgba(169,178,200,0.6); }
+
+/* ============ ANIMACIONES ============ */
+@keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes scrolldot { 0%,100% { transform: translate(-50%,0); opacity: 1; } 50% { transform: translate(-50%,8px); opacity: 0.3; } }
+@keyframes reveal { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
+
+/* scroll-reveal solo si el browser soporta scroll timelines → nunca esconde contenido en navegadores sin soporte */
+@supports (animation-timeline: view()) {
+  .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 5% cover 24%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, .hero__inner, .reveal { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 560px) {
+  .cards { grid-template-columns: 1fr; }
+  .hero__inner { padding-bottom: 16vh; }
+  .hero__title { font-size: clamp(44px, 15vw, 64px); }
+  .card__media { aspect-ratio: 16 / 11; }
+}

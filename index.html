@@ -7,37 +7,156 @@
        IGNORADO por el browser cuando la CSP viene en <meta> (solo aplica como
        header HTTP). Se incluye para documentar intención; el anti-clickjacking
        real requiere servir el sitio detrás de un proxy/CDN (Cloudflare/Netlify). -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://ouebsazcvcrdccdfforf.supabase.co; base-uri 'self'; form-action 'self'; frame-ancestors 'none'" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#070A18" />
   <title>experion — inteligencia que conecta</title>
-  <meta name="description" content="experiencias curadas en cdmx. esto apenas empieza." />
+  <meta name="description" content="las experiencias que tu ciudad no te muestra. curadas, verificadas, para ti. experiencias premium en cdmx." />
   <meta property="og:title" content="experion" />
-  <meta property="og:description" content="inteligencia que conecta. experiencias curadas en cdmx." />
+  <meta property="og:description" content="inteligencia que conecta. las experiencias que tu ciudad no te muestra, curadas para cdmx." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://experion.app/" />
   <link rel="icon" href="assets/experion-mark.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/landing.css" />
 </head>
 <body>
-  <section class="hero">
-    <img src="assets/experion-mark.svg" alt="experion" class="seal" />
-    <h1>experion</h1>
-    <p class="tagline">inteligencia que conecta.</p>
-    <p class="subtitle">experiencias curadas en cdmx. esto apenas empieza.</p>
-    <a class="btn-primary" aria-disabled="true" tabindex="-1">próximamente en app store</a>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="grain" aria-hidden="true"></div>
+    <nav class="nav">
+      <span class="wordmark">experion</span>
+    </nav>
+    <div class="hero__inner">
+      <span class="eyebrow">experiencias curadas en cdmx</span>
+      <h1 class="hero__title">inteligencia<br />que conecta.</h1>
+      <p class="hero__sub">las experiencias que tu ciudad no te muestra. curadas, verificadas, para ti.</p>
+      <div class="hero__cta">
+        <a class="btn-appstore" role="button" aria-disabled="true" tabindex="-1" aria-label="descárgala en app store (próximamente)">
+          <svg class="btn-appstore__logo" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="btn-appstore__txt">
+            <small>descárgala en</small>
+            <strong>App Store</strong>
+          </span>
+        </a>
+        <span class="hero__hint">próximamente</span>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true"><span></span></div>
+  </header>
+
+  <!-- ============ EXPERIENCIAS DESTACADAS ============ -->
+  <section class="section reveal" id="experiencias">
+    <span class="eyebrow eyebrow--violet">curado para cdmx</span>
+    <h2 class="section__title">lo que tu ciudad esconde</h2>
+    <p class="section__lead">una muestra de lo que vive dentro. acceso real a experiencias que no encontrás en una búsqueda.</p>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card__media">
+          <img src="https://ouebsazcvcrdccdfforf.supabase.co/storage/v1/object/public/experience-photos/experience/3a2ec072-90a6-41b0-b650-17518ed16ef8/1779746246552-heli1.jpg" alt="vuelo en helicóptero sobre el nevado de toluca" loading="lazy" />
+        </div>
+        <div class="card__body">
+          <span class="eyebrow eyebrow--cyan">aventura</span>
+          <h3 class="card__title">helicóptero al nevado de toluca</h3>
+          <p class="card__desc">vuelo privado sobre el cráter y cinco senderos que casi nadie pisa.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__media">
+          <img src="https://images.unsplash.com/photo-1760691313751-98262affa4f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="sound bath con cuencos en una bóveda" loading="lazy" />
+          <span class="card__credit">foto: Kabita Captured / Unsplash</span>
+        </div>
+        <div class="card__body">
+          <span class="eyebrow eyebrow--cyan">bienestar</span>
+          <h3 class="card__title">sound bath privado</h3>
+          <p class="card__desc">cuencos y gong en la bóveda de una capilla colonial. una hora fuera del tiempo.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__media">
+          <img src="https://images.unsplash.com/photo-1621644894301-cd6b2eaca610?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="copa de vino tinto en una cata" loading="lazy" />
+          <span class="card__credit">foto: rikkia hughes / Unsplash</span>
+        </div>
+        <div class="card__body">
+          <span class="eyebrow eyebrow--cyan">gastronomía</span>
+          <h3 class="card__title">cata de vinos en polanco</h3>
+          <p class="card__desc">una selección premium en una mesa íntima, guiada copa por copa.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__media">
+          <img src="https://images.unsplash.com/photo-1536392706976-e486e2ba97af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="mesa de cena privada a la luz de velas" loading="lazy" />
+          <span class="card__credit">foto: M F / Unsplash</span>
+        </div>
+        <div class="card__body">
+          <span class="eyebrow eyebrow--cyan">gastronomía</span>
+          <h3 class="card__title">cena privada</h3>
+          <p class="card__desc">a puerta cerrada, solo por invitación. para los que ya saben.</p>
+        </div>
+      </article>
+    </div>
   </section>
 
+  <!-- ============ CÓMO FUNCIONA ============ -->
+  <section class="section how reveal" id="como-funciona">
+    <span class="eyebrow eyebrow--violet">cómo funciona</span>
+    <h2 class="section__title">tres pasos</h2>
+    <ol class="steps">
+      <li class="step">
+        <span class="step__num">01</span>
+        <h3 class="step__title">explora lo curado</h3>
+        <p class="step__desc">una selección a mano de lo que tu ciudad no muestra. nada de relleno.</p>
+      </li>
+      <li class="step">
+        <span class="step__num">02</span>
+        <h3 class="step__title">solicita tu acceso</h3>
+        <p class="step__desc">algunas experiencias son abiertas; otras, solo por solicitud o invitación.</p>
+      </li>
+      <li class="step">
+        <span class="step__num">03</span>
+        <h3 class="step__title">vive lo que sigue</h3>
+        <p class="step__desc">tu acceso queda confirmado y el resto es tuyo.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="cta">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cta__inner">
+      <span class="wordmark wordmark--lg">experion</span>
+      <h2 class="cta__title">esto apenas empieza.</h2>
+      <a class="btn-appstore" role="button" aria-disabled="true" tabindex="-1" aria-label="descárgala en app store (próximamente)">
+        <svg class="btn-appstore__logo" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span class="btn-appstore__txt">
+          <small>descárgala en</small>
+          <strong>App Store</strong>
+        </span>
+      </a>
+      <span class="hero__hint">próximamente</span>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="links">
+    <div class="footer__links">
       <a href="privacidad.html">privacidad</a>
       <a href="terminos.html">términos</a>
       <a href="soporte.html">soporte</a>
     </div>
-    <div class="legal">© 2026 rent in one click, s.a.p.i. de c.v.</div>
+    <div class="footer__meta">
+      <span class="footer__brand">experion</span>
+      <span class="footer__legal">© 2026 rent in one click, s.a.p.i. de c.v.</span>
+    </div>
+    <p class="footer__credit">fotografías vía Unsplash y colaboradores. cdmx.</p>
   </footer>
+
 </body>
 </html>
